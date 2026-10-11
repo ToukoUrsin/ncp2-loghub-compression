@@ -1,8 +1,9 @@
 # NCP2: numeric-prefix predictor + zstd on the full LogHub-2.0 logs
 
-NCP2 splits each log line into a normalized text prefix and numeric fields, predicts the numbers
-from the previous line with the same prefix, and compresses 1 MiB blocks with libzstd 1.5.7 at
-level 17 (`src/ncp.cpp`, ~200 lines). It is lossless: every archive below decodes to the exact
+NCP2 replaces every digit run in a log line with a marker, keys each number by a hash of the
+line prefix before it (numbers already masked), stores the zigzag difference from the last number
+seen with the same key, and compresses 1 MiB blocks of text plus residuals with libzstd 1.5.7
+level 17 (`src/ncp.cpp`, 128 lines, no trained data). It is lossless: every archive below decodes to the exact
 raw SHA-256, an independent decoder re-checks it, and a one-byte truncation is rejected.
 
 ## Full LogHub-2.0 files (Zenodo record 8275861), 14 systems
