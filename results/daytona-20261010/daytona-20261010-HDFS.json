@@ -1,0 +1,254 @@
+{
+  "schema": "full six-system NCP2 and four-comparator screen v1",
+  "scope": "Android/BGL/HDFS/Spark/Thunderbird/Windows full public files",
+  "systems": [
+    "HDFS"
+  ],
+  "sources": {
+    "HDFS": {
+      "url": "https://zenodo.org/records/8275861/files/HDFS.zip?download=1",
+      "archive": "HDFS.zip",
+      "archive_bytes": 321944794,
+      "archive_md5": "f23880dd4938379a535ab71a8d27a798",
+      "kind": "zip",
+      "source_record": "https://zenodo.org/records/8275861"
+    }
+  },
+  "settings": {
+    "ncp2_workers": 4,
+    "xz": [
+      "-9e",
+      "--threads=1"
+    ],
+    "zstd": [
+      "-19",
+      "--long=31",
+      "--threads=1"
+    ],
+    "clp": [
+      "compression-level",
+      "19"
+    ],
+    "trials": 1
+  },
+  "binary_sha256": {
+    "ncp": "0c0fa3044c6f2fade984e1ec129f8b6924b4e683a5e0be7b15f9f18d5ddfe38c",
+    "xz": "04eab2236d2709c7e631836b786c998268cc4f8f5786b0fba8b2042df4d705ac",
+    "zstd": "7312a2ed2615c46370868009aa34401e6b1ed56fe61847834887337c1d445ff8",
+    "clp": "ba224bd12298ed361802d90cb023f050bf6b3f3f54ea0491ebb4305a8e5f3ee6"
+  },
+  "rows": [
+    {
+      "system": "HDFS",
+      "raw_bytes": 1565682217,
+      "raw_sha256": "e8987f909b97ce975d65f773a4e1eae7aadab455a38db2aa29ed30ae8b96f166",
+      "ncp2": {
+        "compressed_bytes": 142938028,
+        "encode": {
+          "command": [
+            "/root/w/worker/worker-lead-six/tools/ncp/ncp",
+            "e",
+            "/tmp/log-compression-six-f6h19gt5/raw/HDFS/HDFS_full.log",
+            "/tmp/log-compression-six-f6h19gt5/frames/HDFS.ncp",
+            "4"
+          ],
+          "seconds": 30.983455400913954,
+          "returncode": 0,
+          "stderr_tail": ""
+        },
+        "native": {
+          "sha256": "e8987f909b97ce975d65f773a4e1eae7aadab455a38db2aa29ed30ae8b96f166",
+          "bytes": 1565682217,
+          "exact": true,
+          "decode": {
+            "command": [
+              "/root/w/worker/worker-lead-six/tools/ncp/ncp",
+              "d",
+              "/tmp/log-compression-six-f6h19gt5/frames/HDFS.ncp",
+              "/tmp/log-compression-six-f6h19gt5/frames/HDFS.restored"
+            ],
+            "seconds": 5.517960297409445,
+            "returncode": 0,
+            "stderr_tail": ""
+          }
+        },
+        "independent": {
+          "passed": true,
+          "raw_bytes": 1565682217,
+          "raw_sha256": "e8987f909b97ce975d65f773a4e1eae7aadab455a38db2aa29ed30ae8b96f166",
+          "blocks": 1494
+        },
+        "negative": {
+          "rejected": true,
+          "decode": {
+            "command": [
+              "/root/w/worker/worker-lead-six/tools/ncp/ncp",
+              "d",
+              "/tmp/log-compression-six-f6h19gt5/frames/HDFS.ncp.trunc",
+              "/tmp/log-compression-six-f6h19gt5/frames/HDFS.ncp.bad"
+            ],
+            "seconds": 5.588177538011223,
+            "returncode": 1,
+            "stderr_tail": "truncated stream\n"
+          }
+        }
+      },
+      "xz": {
+        "compressed_bytes": 84957388,
+        "encode": {
+          "command": [
+            "/root/w/worker/worker-lead-six/tools/xz/xz",
+            "-q",
+            "-9e",
+            "--threads=1",
+            "-c",
+            "/tmp/log-compression-six-f6h19gt5/raw/HDFS/HDFS_full.log"
+          ],
+          "seconds": 1606.8958473741077,
+          "returncode": 0,
+          "stderr_tail": ""
+        },
+        "decode": {
+          "command": [
+            "/root/w/worker/worker-lead-six/tools/xz/xz",
+            "-q",
+            "-d",
+            "-c",
+            "/tmp/log-compression-six-f6h19gt5/frames/HDFS.xz"
+          ],
+          "seconds": 4.459979984909296,
+          "returncode": 0,
+          "bytes": 1565682217,
+          "sha256": "e8987f909b97ce975d65f773a4e1eae7aadab455a38db2aa29ed30ae8b96f166",
+          "exact": true,
+          "stderr_tail": ""
+        },
+        "negative": {
+          "rejected_or_wrong_hash": true,
+          "decode": {
+            "command": [
+              "/root/w/worker/worker-lead-six/tools/xz/xz",
+              "-q",
+              "-d",
+              "-c",
+              "/tmp/log-compression-six-f6h19gt5/frames/HDFS.xz.trunc"
+            ],
+            "seconds": 4.5501798638142645,
+            "returncode": 1,
+            "bytes": 1565682217,
+            "sha256": "e8987f909b97ce975d65f773a4e1eae7aadab455a38db2aa29ed30ae8b96f166",
+            "exact": false,
+            "stderr_tail": "/root/w/worker/worker-lead-six/tools/xz/xz: /tmp/log-compression-six-f6h19gt5/frames/HDFS.xz.trunc: Unexpected end of input\n"
+          }
+        }
+      },
+      "zstd": {
+        "compressed_bytes": 95939979,
+        "encode": {
+          "command": [
+            "/root/w/worker/worker-lead-six/tools/zstd/zstd",
+            "-q",
+            "-19",
+            "--long=31",
+            "--threads=1",
+            "-c",
+            "/tmp/log-compression-six-f6h19gt5/raw/HDFS/HDFS_full.log"
+          ],
+          "seconds": 817.0334390439093,
+          "returncode": 0,
+          "stderr_tail": ""
+        },
+        "decode": {
+          "command": [
+            "/root/w/worker/worker-lead-six/tools/zstd/zstd",
+            "-q",
+            "-d",
+            "--long=31",
+            "-c",
+            "/tmp/log-compression-six-f6h19gt5/frames/HDFS.zstd"
+          ],
+          "seconds": 2.1394572472199798,
+          "returncode": 0,
+          "bytes": 1565682217,
+          "sha256": "e8987f909b97ce975d65f773a4e1eae7aadab455a38db2aa29ed30ae8b96f166",
+          "exact": true,
+          "stderr_tail": ""
+        },
+        "negative": {
+          "rejected_or_wrong_hash": true,
+          "decode": {
+            "command": [
+              "/root/w/worker/worker-lead-six/tools/zstd/zstd",
+              "-q",
+              "-d",
+              "--long=31",
+              "-c",
+              "/tmp/log-compression-six-f6h19gt5/frames/HDFS.zstd.trunc"
+            ],
+            "seconds": 2.1442667013034225,
+            "returncode": 1,
+            "bytes": 1565682217,
+            "sha256": "e8987f909b97ce975d65f773a4e1eae7aadab455a38db2aa29ed30ae8b96f166",
+            "exact": false,
+            "stderr_tail": "/tmp/log-compression-six-f6h19gt5/frames/HDFS.zstd.trunc : Read error (39) : premature end \n"
+          }
+        }
+      },
+      "clp": {
+        "archive_bytes": 75351488,
+        "archive_files": 8,
+        "encode": {
+          "command": [
+            "/root/w/worker/worker-lead-six/tools/clp/usr/bin/clp",
+            "c",
+            "/tmp/log-compression-six-f6h19gt5/frames/HDFS.clp",
+            "--compression-level",
+            "19",
+            "--remove-path-prefix",
+            "/tmp/log-compression-six-f6h19gt5/raw/HDFS",
+            "/tmp/log-compression-six-f6h19gt5/raw/HDFS/HDFS_full.log"
+          ],
+          "seconds": 249.88186261896044,
+          "returncode": 0,
+          "stderr_tail": ""
+        },
+        "decode": {
+          "command": [
+            "/root/w/worker/worker-lead-six/tools/clp/usr/bin/clp",
+            "x",
+            "/tmp/log-compression-six-f6h19gt5/frames/HDFS.clp",
+            "/tmp/log-compression-six-f6h19gt5/frames/HDFS.clp.extract"
+          ],
+          "seconds": 3.6739446641877294,
+          "returncode": 0,
+          "stderr_tail": ""
+        },
+        "roundtrip": true,
+        "restored_sha256": "e8987f909b97ce975d65f773a4e1eae7aadab455a38db2aa29ed30ae8b96f166",
+        "negative": {
+          "returncode": 255,
+          "sha256": null,
+          "rejected_or_wrong_hash": true
+        }
+      },
+      "source": {
+        "archive_url": "https://zenodo.org/records/8275861/files/HDFS.zip?download=1",
+        "source_record": "https://zenodo.org/records/8275861",
+        "archive": "HDFS.zip",
+        "archive_bytes": 321944794,
+        "archive_md5": "f23880dd4938379a535ab71a8d27a798",
+        "archive_entry": "HDFS/HDFS_full.log",
+        "raw_bytes": 1565682217,
+        "raw_sha256": "e8987f909b97ce975d65f773a4e1eae7aadab455a38db2aa29ed30ae8b96f166"
+      }
+    }
+  ],
+  "totals": {
+    "systems": 1,
+    "ncp2_exact": 1,
+    "ncp2_negative": 1,
+    "xz_exact": 1,
+    "zstd_exact": 1,
+    "clp_exact": 1
+  }
+}

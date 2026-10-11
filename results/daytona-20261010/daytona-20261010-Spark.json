@@ -1,0 +1,254 @@
+{
+  "schema": "full six-system NCP2 and four-comparator screen v1",
+  "scope": "Android/BGL/HDFS/Spark/Thunderbird/Windows full public files",
+  "systems": [
+    "Spark"
+  ],
+  "sources": {
+    "Spark": {
+      "url": "https://zenodo.org/records/8275861/files/Spark.zip?download=1",
+      "archive": "Spark.zip",
+      "archive_bytes": 230699188,
+      "archive_md5": "ca0ef9c6e8ece0df602793bd302e03a6",
+      "kind": "zip",
+      "source_record": "https://zenodo.org/records/8275861"
+    }
+  },
+  "settings": {
+    "ncp2_workers": 4,
+    "xz": [
+      "-9e",
+      "--threads=1"
+    ],
+    "zstd": [
+      "-19",
+      "--long=31",
+      "--threads=1"
+    ],
+    "clp": [
+      "compression-level",
+      "19"
+    ],
+    "trials": 1
+  },
+  "binary_sha256": {
+    "ncp": "0c0fa3044c6f2fade984e1ec129f8b6924b4e683a5e0be7b15f9f18d5ddfe38c",
+    "xz": "04eab2236d2709c7e631836b786c998268cc4f8f5786b0fba8b2042df4d705ac",
+    "zstd": "7312a2ed2615c46370868009aa34401e6b1ed56fe61847834887337c1d445ff8",
+    "clp": "ba224bd12298ed361802d90cb023f050bf6b3f3f54ea0491ebb4305a8e5f3ee6"
+  },
+  "rows": [
+    {
+      "system": "Spark",
+      "raw_bytes": 1629352119,
+      "raw_sha256": "74da349d7202a13194aa02ca2dd0ccb18a130656d002b94eb6b0e78e92bf6823",
+      "ncp2": {
+        "compressed_bytes": 35742263,
+        "encode": {
+          "command": [
+            "/root/w/worker/worker-lead-six/tools/ncp/ncp",
+            "e",
+            "/tmp/log-compression-six-ec0w15oo/raw/Spark/Spark_full.log",
+            "/tmp/log-compression-six-ec0w15oo/frames/Spark.ncp",
+            "4"
+          ],
+          "seconds": 15.0478331502527,
+          "returncode": 0,
+          "stderr_tail": ""
+        },
+        "native": {
+          "sha256": "74da349d7202a13194aa02ca2dd0ccb18a130656d002b94eb6b0e78e92bf6823",
+          "bytes": 1629352119,
+          "exact": true,
+          "decode": {
+            "command": [
+              "/root/w/worker/worker-lead-six/tools/ncp/ncp",
+              "d",
+              "/tmp/log-compression-six-ec0w15oo/frames/Spark.ncp",
+              "/tmp/log-compression-six-ec0w15oo/frames/Spark.restored"
+            ],
+            "seconds": 5.371131982188672,
+            "returncode": 0,
+            "stderr_tail": ""
+          }
+        },
+        "independent": {
+          "passed": true,
+          "raw_bytes": 1629352119,
+          "raw_sha256": "74da349d7202a13194aa02ca2dd0ccb18a130656d002b94eb6b0e78e92bf6823",
+          "blocks": 1554
+        },
+        "negative": {
+          "rejected": true,
+          "decode": {
+            "command": [
+              "/root/w/worker/worker-lead-six/tools/ncp/ncp",
+              "d",
+              "/tmp/log-compression-six-ec0w15oo/frames/Spark.ncp.trunc",
+              "/tmp/log-compression-six-ec0w15oo/frames/Spark.ncp.bad"
+            ],
+            "seconds": 5.212350168265402,
+            "returncode": 1,
+            "stderr_tail": "truncated stream\n"
+          }
+        }
+      },
+      "xz": {
+        "compressed_bytes": 48769008,
+        "encode": {
+          "command": [
+            "/root/w/worker/worker-lead-six/tools/xz/xz",
+            "-q",
+            "-9e",
+            "--threads=1",
+            "-c",
+            "/tmp/log-compression-six-ec0w15oo/raw/Spark/Spark_full.log"
+          ],
+          "seconds": 2955.0075613101944,
+          "returncode": 0,
+          "stderr_tail": ""
+        },
+        "decode": {
+          "command": [
+            "/root/w/worker/worker-lead-six/tools/xz/xz",
+            "-q",
+            "-d",
+            "-c",
+            "/tmp/log-compression-six-ec0w15oo/frames/Spark.xz"
+          ],
+          "seconds": 3.319888143800199,
+          "returncode": 0,
+          "bytes": 1629352119,
+          "sha256": "74da349d7202a13194aa02ca2dd0ccb18a130656d002b94eb6b0e78e92bf6823",
+          "exact": true,
+          "stderr_tail": ""
+        },
+        "negative": {
+          "rejected_or_wrong_hash": true,
+          "decode": {
+            "command": [
+              "/root/w/worker/worker-lead-six/tools/xz/xz",
+              "-q",
+              "-d",
+              "-c",
+              "/tmp/log-compression-six-ec0w15oo/frames/Spark.xz.trunc"
+            ],
+            "seconds": 3.481115462258458,
+            "returncode": 1,
+            "bytes": 1629352119,
+            "sha256": "74da349d7202a13194aa02ca2dd0ccb18a130656d002b94eb6b0e78e92bf6823",
+            "exact": false,
+            "stderr_tail": "/root/w/worker/worker-lead-six/tools/xz/xz: /tmp/log-compression-six-ec0w15oo/frames/Spark.xz.trunc: Unexpected end of input\n"
+          }
+        }
+      },
+      "zstd": {
+        "compressed_bytes": 58041995,
+        "encode": {
+          "command": [
+            "/root/w/worker/worker-lead-six/tools/zstd/zstd",
+            "-q",
+            "-19",
+            "--long=31",
+            "--threads=1",
+            "-c",
+            "/tmp/log-compression-six-ec0w15oo/raw/Spark/Spark_full.log"
+          ],
+          "seconds": 890.8194787306711,
+          "returncode": 0,
+          "stderr_tail": ""
+        },
+        "decode": {
+          "command": [
+            "/root/w/worker/worker-lead-six/tools/zstd/zstd",
+            "-q",
+            "-d",
+            "--long=31",
+            "-c",
+            "/tmp/log-compression-six-ec0w15oo/frames/Spark.zstd"
+          ],
+          "seconds": 1.8706770678982139,
+          "returncode": 0,
+          "bytes": 1629352119,
+          "sha256": "74da349d7202a13194aa02ca2dd0ccb18a130656d002b94eb6b0e78e92bf6823",
+          "exact": true,
+          "stderr_tail": ""
+        },
+        "negative": {
+          "rejected_or_wrong_hash": true,
+          "decode": {
+            "command": [
+              "/root/w/worker/worker-lead-six/tools/zstd/zstd",
+              "-q",
+              "-d",
+              "--long=31",
+              "-c",
+              "/tmp/log-compression-six-ec0w15oo/frames/Spark.zstd.trunc"
+            ],
+            "seconds": 1.6792545611970127,
+            "returncode": 1,
+            "bytes": 1629224960,
+            "sha256": "c342c3e30221f932c574d4484d4d8be40882ad5ee8b696d87c55ef83ddcc0d47",
+            "exact": false,
+            "stderr_tail": "/tmp/log-compression-six-ec0w15oo/frames/Spark.zstd.trunc : Read error (39) : premature end \n"
+          }
+        }
+      },
+      "clp": {
+        "archive_bytes": 48408242,
+        "archive_files": 8,
+        "encode": {
+          "command": [
+            "/root/w/worker/worker-lead-six/tools/clp/usr/bin/clp",
+            "c",
+            "/tmp/log-compression-six-ec0w15oo/frames/Spark.clp",
+            "--compression-level",
+            "19",
+            "--remove-path-prefix",
+            "/tmp/log-compression-six-ec0w15oo/raw/Spark",
+            "/tmp/log-compression-six-ec0w15oo/raw/Spark/Spark_full.log"
+          ],
+          "seconds": 147.78141159191728,
+          "returncode": 0,
+          "stderr_tail": ""
+        },
+        "decode": {
+          "command": [
+            "/root/w/worker/worker-lead-six/tools/clp/usr/bin/clp",
+            "x",
+            "/tmp/log-compression-six-ec0w15oo/frames/Spark.clp",
+            "/tmp/log-compression-six-ec0w15oo/frames/Spark.clp.extract"
+          ],
+          "seconds": 4.920490969903767,
+          "returncode": 0,
+          "stderr_tail": ""
+        },
+        "roundtrip": true,
+        "restored_sha256": "74da349d7202a13194aa02ca2dd0ccb18a130656d002b94eb6b0e78e92bf6823",
+        "negative": {
+          "returncode": 255,
+          "sha256": null,
+          "rejected_or_wrong_hash": true
+        }
+      },
+      "source": {
+        "archive_url": "https://zenodo.org/records/8275861/files/Spark.zip?download=1",
+        "source_record": "https://zenodo.org/records/8275861",
+        "archive": "Spark.zip",
+        "archive_bytes": 230699188,
+        "archive_md5": "ca0ef9c6e8ece0df602793bd302e03a6",
+        "archive_entry": "Spark/Spark_full.log",
+        "raw_bytes": 1629352119,
+        "raw_sha256": "74da349d7202a13194aa02ca2dd0ccb18a130656d002b94eb6b0e78e92bf6823"
+      }
+    }
+  ],
+  "totals": {
+    "systems": 1,
+    "ncp2_exact": 1,
+    "ncp2_negative": 1,
+    "xz_exact": 1,
+    "zstd_exact": 1,
+    "clp_exact": 1
+  }
+}

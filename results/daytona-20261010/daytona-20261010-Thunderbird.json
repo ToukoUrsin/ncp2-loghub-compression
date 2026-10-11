@@ -1,0 +1,254 @@
+{
+  "schema": "full six-system NCP2 and four-comparator screen v1",
+  "scope": "Android/BGL/HDFS/Spark/Thunderbird/Windows full public files",
+  "systems": [
+    "Thunderbird"
+  ],
+  "sources": {
+    "Thunderbird": {
+      "url": "https://zenodo.org/records/8275861/files/Thunderbird.zip?download=1",
+      "archive": "Thunderbird.zip",
+      "archive_bytes": 293018641,
+      "archive_md5": "a8d365d003845c3bef61661375513910",
+      "kind": "zip",
+      "source_record": "https://zenodo.org/records/8275861"
+    }
+  },
+  "settings": {
+    "ncp2_workers": 4,
+    "xz": [
+      "-9e",
+      "--threads=1"
+    ],
+    "zstd": [
+      "-19",
+      "--long=31",
+      "--threads=1"
+    ],
+    "clp": [
+      "compression-level",
+      "19"
+    ],
+    "trials": 1
+  },
+  "binary_sha256": {
+    "ncp": "0c0fa3044c6f2fade984e1ec129f8b6924b4e683a5e0be7b15f9f18d5ddfe38c",
+    "xz": "04eab2236d2709c7e631836b786c998268cc4f8f5786b0fba8b2042df4d705ac",
+    "zstd": "7312a2ed2615c46370868009aa34401e6b1ed56fe61847834887337c1d445ff8",
+    "clp": "ba224bd12298ed361802d90cb023f050bf6b3f3f54ea0491ebb4305a8e5f3ee6"
+  },
+  "rows": [
+    {
+      "system": "Thunderbird",
+      "raw_bytes": 2516177713,
+      "raw_sha256": "a276905e7517a7d2c1d658490a0f27919c666045c3454ba695a5e77f79e9cbfe",
+      "ncp2": {
+        "compressed_bytes": 66659067,
+        "encode": {
+          "command": [
+            "/root/w/worker/worker-lead-six/tools/ncp/ncp",
+            "e",
+            "/tmp/log-compression-six-oek3lngt/raw/Thunderbird/Thunderbird_full.log",
+            "/tmp/log-compression-six-oek3lngt/frames/Thunderbird.ncp",
+            "4"
+          ],
+          "seconds": 26.50043463986367,
+          "returncode": 0,
+          "stderr_tail": ""
+        },
+        "native": {
+          "sha256": "a276905e7517a7d2c1d658490a0f27919c666045c3454ba695a5e77f79e9cbfe",
+          "bytes": 2516177713,
+          "exact": true,
+          "decode": {
+            "command": [
+              "/root/w/worker/worker-lead-six/tools/ncp/ncp",
+              "d",
+              "/tmp/log-compression-six-oek3lngt/frames/Thunderbird.ncp",
+              "/tmp/log-compression-six-oek3lngt/frames/Thunderbird.restored"
+            ],
+            "seconds": 7.85168894007802,
+            "returncode": 0,
+            "stderr_tail": ""
+          }
+        },
+        "independent": {
+          "passed": true,
+          "raw_bytes": 2516177713,
+          "raw_sha256": "a276905e7517a7d2c1d658490a0f27919c666045c3454ba695a5e77f79e9cbfe",
+          "blocks": 2400
+        },
+        "negative": {
+          "rejected": true,
+          "decode": {
+            "command": [
+              "/root/w/worker/worker-lead-six/tools/ncp/ncp",
+              "d",
+              "/tmp/log-compression-six-oek3lngt/frames/Thunderbird.ncp.trunc",
+              "/tmp/log-compression-six-oek3lngt/frames/Thunderbird.ncp.bad"
+            ],
+            "seconds": 7.771193963009864,
+            "returncode": 1,
+            "stderr_tail": "truncated stream\n"
+          }
+        }
+      },
+      "xz": {
+        "compressed_bytes": 77243676,
+        "encode": {
+          "command": [
+            "/root/w/worker/worker-lead-six/tools/xz/xz",
+            "-q",
+            "-9e",
+            "--threads=1",
+            "-c",
+            "/tmp/log-compression-six-oek3lngt/raw/Thunderbird/Thunderbird_full.log"
+          ],
+          "seconds": 5447.128716715146,
+          "returncode": 0,
+          "stderr_tail": ""
+        },
+        "decode": {
+          "command": [
+            "/root/w/worker/worker-lead-six/tools/xz/xz",
+            "-q",
+            "-d",
+            "-c",
+            "/tmp/log-compression-six-oek3lngt/frames/Thunderbird.xz"
+          ],
+          "seconds": 5.23523462889716,
+          "returncode": 0,
+          "bytes": 2516177713,
+          "sha256": "a276905e7517a7d2c1d658490a0f27919c666045c3454ba695a5e77f79e9cbfe",
+          "exact": true,
+          "stderr_tail": ""
+        },
+        "negative": {
+          "rejected_or_wrong_hash": true,
+          "decode": {
+            "command": [
+              "/root/w/worker/worker-lead-six/tools/xz/xz",
+              "-q",
+              "-d",
+              "-c",
+              "/tmp/log-compression-six-oek3lngt/frames/Thunderbird.xz.trunc"
+            ],
+            "seconds": 5.2790592280216515,
+            "returncode": 1,
+            "bytes": 2516177713,
+            "sha256": "a276905e7517a7d2c1d658490a0f27919c666045c3454ba695a5e77f79e9cbfe",
+            "exact": false,
+            "stderr_tail": "/root/w/worker/worker-lead-six/tools/xz/xz: /tmp/log-compression-six-oek3lngt/frames/Thunderbird.xz.trunc: Unexpected end of input\n"
+          }
+        }
+      },
+      "zstd": {
+        "compressed_bytes": 93918407,
+        "encode": {
+          "command": [
+            "/root/w/worker/worker-lead-six/tools/zstd/zstd",
+            "-q",
+            "-19",
+            "--long=31",
+            "--threads=1",
+            "-c",
+            "/tmp/log-compression-six-oek3lngt/raw/Thunderbird/Thunderbird_full.log"
+          ],
+          "seconds": 1414.2167409998365,
+          "returncode": 0,
+          "stderr_tail": ""
+        },
+        "decode": {
+          "command": [
+            "/root/w/worker/worker-lead-six/tools/zstd/zstd",
+            "-q",
+            "-d",
+            "--long=31",
+            "-c",
+            "/tmp/log-compression-six-oek3lngt/frames/Thunderbird.zstd"
+          ],
+          "seconds": 3.1667934809811413,
+          "returncode": 0,
+          "bytes": 2516177713,
+          "sha256": "a276905e7517a7d2c1d658490a0f27919c666045c3454ba695a5e77f79e9cbfe",
+          "exact": true,
+          "stderr_tail": ""
+        },
+        "negative": {
+          "rejected_or_wrong_hash": true,
+          "decode": {
+            "command": [
+              "/root/w/worker/worker-lead-six/tools/zstd/zstd",
+              "-q",
+              "-d",
+              "--long=31",
+              "-c",
+              "/tmp/log-compression-six-oek3lngt/frames/Thunderbird.zstd.trunc"
+            ],
+            "seconds": 3.1769595872610807,
+            "returncode": 1,
+            "bytes": 2516058112,
+            "sha256": "1b4daf0c58eeaa87a6066f66788541375af76a91b18d15b24902c8eeba8e1b44",
+            "exact": false,
+            "stderr_tail": "/tmp/log-compression-six-oek3lngt/frames/Thunderbird.zstd.trunc : Read error (39) : premature end \n"
+          }
+        }
+      },
+      "clp": {
+        "archive_bytes": 83978739,
+        "archive_files": 9,
+        "encode": {
+          "command": [
+            "/root/w/worker/worker-lead-six/tools/clp/usr/bin/clp",
+            "c",
+            "/tmp/log-compression-six-oek3lngt/frames/Thunderbird.clp",
+            "--compression-level",
+            "19",
+            "--remove-path-prefix",
+            "/tmp/log-compression-six-oek3lngt/raw/Thunderbird",
+            "/tmp/log-compression-six-oek3lngt/raw/Thunderbird/Thunderbird_full.log"
+          ],
+          "seconds": 574.2913282336667,
+          "returncode": 0,
+          "stderr_tail": ""
+        },
+        "decode": {
+          "command": [
+            "/root/w/worker/worker-lead-six/tools/clp/usr/bin/clp",
+            "x",
+            "/tmp/log-compression-six-oek3lngt/frames/Thunderbird.clp",
+            "/tmp/log-compression-six-oek3lngt/frames/Thunderbird.clp.extract"
+          ],
+          "seconds": 6.471785473171622,
+          "returncode": 0,
+          "stderr_tail": ""
+        },
+        "roundtrip": true,
+        "restored_sha256": "a276905e7517a7d2c1d658490a0f27919c666045c3454ba695a5e77f79e9cbfe",
+        "negative": {
+          "returncode": 255,
+          "sha256": null,
+          "rejected_or_wrong_hash": true
+        }
+      },
+      "source": {
+        "archive_url": "https://zenodo.org/records/8275861/files/Thunderbird.zip?download=1",
+        "source_record": "https://zenodo.org/records/8275861",
+        "archive": "Thunderbird.zip",
+        "archive_bytes": 293018641,
+        "archive_md5": "a8d365d003845c3bef61661375513910",
+        "archive_entry": "Thunderbird/Thunderbird_full.log",
+        "raw_bytes": 2516177713,
+        "raw_sha256": "a276905e7517a7d2c1d658490a0f27919c666045c3454ba695a5e77f79e9cbfe"
+      }
+    }
+  ],
+  "totals": {
+    "systems": 1,
+    "ncp2_exact": 1,
+    "ncp2_negative": 1,
+    "xz_exact": 1,
+    "zstd_exact": 1,
+    "clp_exact": 1
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "checked": [
+    "Apache",
+    "Proxifier",
+    "Linux",
+    "Zookeeper",
+    "Mac",
+    "Hadoop",
+    "HPC",
+    "HealthApp",
+    "OpenStack",
+    "OpenSSH"
+  ],
+  "count": 10,
+  "all_exact": true,
+  "all_truncation_rejected": true
+}

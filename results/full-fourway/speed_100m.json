@@ -1,0 +1,60 @@
+{
+  "schema": "NCP2 full-size speed check v1",
+  "raw": "worker/worker4-011/results/speed_100m.input.log",
+  "raw_bytes": 100000000,
+  "raw_sha256": "acb8f1d18fff4b26ce0d759c0b43e77762b5cfa72b30c4bbd1b243d1a8248fae",
+  "seed": "data/loghub/OpenSSH/OpenSSH_2k.log",
+  "seed_sha256": "1e4912727fa88245113d41b16a0cd25ceadba7f931e1c406542885b91254264f",
+  "exact_bytes": 100000000,
+  "candidate": "src/ncp2/bin/ncp",
+  "workers": 4,
+  "trials": [
+    {
+      "repeat": 0,
+      "encode": {
+        "seconds": 0.42744318099903467,
+        "returncode": 0,
+        "stderr": ""
+      },
+      "frame_bytes": 651405,
+      "frame_sha256": "6cc20723026b5c15814162a82ee8db45193a591ec0d37b6215df339308f4a20e",
+      "MBps": 233.94922283302452
+    },
+    {
+      "repeat": 1,
+      "encode": {
+        "seconds": 0.4240014200004225,
+        "returncode": 0,
+        "stderr": ""
+      },
+      "frame_bytes": 651405,
+      "frame_sha256": "6cc20723026b5c15814162a82ee8db45193a591ec0d37b6215df339308f4a20e",
+      "MBps": 235.84826673434338
+    },
+    {
+      "repeat": 2,
+      "encode": {
+        "seconds": 0.427424716999667,
+        "returncode": 0,
+        "stderr": ""
+      },
+      "frame_bytes": 651405,
+      "frame_sha256": "6cc20723026b5c15814162a82ee8db45193a591ec0d37b6215df339308f4a20e",
+      "MBps": 233.95932902981346
+    }
+  ],
+  "median_MBps": 233.95932902981346,
+  "minimum_MBps": 233.94922283302452,
+  "roundtrip": true,
+  "negative_rejected": true,
+  "decode": {
+    "seconds": 0.3625808139986475,
+    "returncode": 0,
+    "stderr": ""
+  },
+  "truncation": {
+    "seconds": 0.36220817399953376,
+    "returncode": 1,
+    "stderr": "truncated stream\n"
+  }
+}

@@ -1,0 +1,254 @@
+{
+  "schema": "full six-system NCP2 and four-comparator screen v1",
+  "scope": "Android/BGL/HDFS/Spark/Thunderbird/Windows full public files",
+  "systems": [
+    "BGL"
+  ],
+  "sources": {
+    "BGL": {
+      "url": "https://zenodo.org/records/8275861/files/BGL.zip?download=1",
+      "archive": "BGL.zip",
+      "archive_bytes": 86118141,
+      "archive_md5": "521ee643375bb6e9d0dd88636ff7ece1",
+      "kind": "zip",
+      "source_record": "https://zenodo.org/records/8275861"
+    }
+  },
+  "settings": {
+    "ncp2_workers": 4,
+    "xz": [
+      "-9e",
+      "--threads=1"
+    ],
+    "zstd": [
+      "-19",
+      "--long=31",
+      "--threads=1"
+    ],
+    "clp": [
+      "compression-level",
+      "19"
+    ],
+    "trials": 1
+  },
+  "binary_sha256": {
+    "ncp": "0c0fa3044c6f2fade984e1ec129f8b6924b4e683a5e0be7b15f9f18d5ddfe38c",
+    "xz": "04eab2236d2709c7e631836b786c998268cc4f8f5786b0fba8b2042df4d705ac",
+    "zstd": "7312a2ed2615c46370868009aa34401e6b1ed56fe61847834887337c1d445ff8",
+    "clp": "ba224bd12298ed361802d90cb023f050bf6b3f3f54ea0491ebb4305a8e5f3ee6"
+  },
+  "rows": [
+    {
+      "system": "BGL",
+      "raw_bytes": 719447452,
+      "raw_sha256": "1bd8cb4a8b163b5085d21d8e0d4cd844e01748cdcc0888c6380e0fb34ca85591",
+      "ncp2": {
+        "compressed_bytes": 24210260,
+        "encode": {
+          "command": [
+            "/root/w/worker/worker-lead-six/tools/ncp/ncp",
+            "e",
+            "/tmp/log-compression-six-2nv1_5zd/raw/BGL/BGL_full.log",
+            "/tmp/log-compression-six-2nv1_5zd/frames/BGL.ncp",
+            "4"
+          ],
+          "seconds": 8.041655527893454,
+          "returncode": 0,
+          "stderr_tail": ""
+        },
+        "native": {
+          "sha256": "1bd8cb4a8b163b5085d21d8e0d4cd844e01748cdcc0888c6380e0fb34ca85591",
+          "bytes": 719447452,
+          "exact": true,
+          "decode": {
+            "command": [
+              "/root/w/worker/worker-lead-six/tools/ncp/ncp",
+              "d",
+              "/tmp/log-compression-six-2nv1_5zd/frames/BGL.ncp",
+              "/tmp/log-compression-six-2nv1_5zd/frames/BGL.restored"
+            ],
+            "seconds": 2.517267500050366,
+            "returncode": 0,
+            "stderr_tail": ""
+          }
+        },
+        "independent": {
+          "passed": true,
+          "raw_bytes": 719447452,
+          "raw_sha256": "1bd8cb4a8b163b5085d21d8e0d4cd844e01748cdcc0888c6380e0fb34ca85591",
+          "blocks": 687
+        },
+        "negative": {
+          "rejected": true,
+          "decode": {
+            "command": [
+              "/root/w/worker/worker-lead-six/tools/ncp/ncp",
+              "d",
+              "/tmp/log-compression-six-2nv1_5zd/frames/BGL.ncp.trunc",
+              "/tmp/log-compression-six-2nv1_5zd/frames/BGL.ncp.bad"
+            ],
+            "seconds": 2.3813827079720795,
+            "returncode": 1,
+            "stderr_tail": "truncated stream\n"
+          }
+        }
+      },
+      "xz": {
+        "compressed_bytes": 27501584,
+        "encode": {
+          "command": [
+            "/root/w/worker/worker-lead-six/tools/xz/xz",
+            "-q",
+            "-9e",
+            "--threads=1",
+            "-c",
+            "/tmp/log-compression-six-2nv1_5zd/raw/BGL/BGL_full.log"
+          ],
+          "seconds": 578.4645408792421,
+          "returncode": 0,
+          "stderr_tail": ""
+        },
+        "decode": {
+          "command": [
+            "/root/w/worker/worker-lead-six/tools/xz/xz",
+            "-q",
+            "-d",
+            "-c",
+            "/tmp/log-compression-six-2nv1_5zd/frames/BGL.xz"
+          ],
+          "seconds": 2.1813039099797606,
+          "returncode": 0,
+          "bytes": 719447452,
+          "sha256": "1bd8cb4a8b163b5085d21d8e0d4cd844e01748cdcc0888c6380e0fb34ca85591",
+          "exact": true,
+          "stderr_tail": ""
+        },
+        "negative": {
+          "rejected_or_wrong_hash": true,
+          "decode": {
+            "command": [
+              "/root/w/worker/worker-lead-six/tools/xz/xz",
+              "-q",
+              "-d",
+              "-c",
+              "/tmp/log-compression-six-2nv1_5zd/frames/BGL.xz.trunc"
+            ],
+            "seconds": 2.1790422732010484,
+            "returncode": 1,
+            "bytes": 719447452,
+            "sha256": "1bd8cb4a8b163b5085d21d8e0d4cd844e01748cdcc0888c6380e0fb34ca85591",
+            "exact": false,
+            "stderr_tail": "/root/w/worker/worker-lead-six/tools/xz/xz: /tmp/log-compression-six-2nv1_5zd/frames/BGL.xz.trunc: Unexpected end of input\n"
+          }
+        }
+      },
+      "zstd": {
+        "compressed_bytes": 32738959,
+        "encode": {
+          "command": [
+            "/root/w/worker/worker-lead-six/tools/zstd/zstd",
+            "-q",
+            "-19",
+            "--long=31",
+            "--threads=1",
+            "-c",
+            "/tmp/log-compression-six-2nv1_5zd/raw/BGL/BGL_full.log"
+          ],
+          "seconds": 318.40810791775584,
+          "returncode": 0,
+          "stderr_tail": ""
+        },
+        "decode": {
+          "command": [
+            "/root/w/worker/worker-lead-six/tools/zstd/zstd",
+            "-q",
+            "-d",
+            "--long=31",
+            "-c",
+            "/tmp/log-compression-six-2nv1_5zd/frames/BGL.zstd"
+          ],
+          "seconds": 0.8387178080156446,
+          "returncode": 0,
+          "bytes": 719447452,
+          "sha256": "1bd8cb4a8b163b5085d21d8e0d4cd844e01748cdcc0888c6380e0fb34ca85591",
+          "exact": true,
+          "stderr_tail": ""
+        },
+        "negative": {
+          "rejected_or_wrong_hash": true,
+          "decode": {
+            "command": [
+              "/root/w/worker/worker-lead-six/tools/zstd/zstd",
+              "-q",
+              "-d",
+              "--long=31",
+              "-c",
+              "/tmp/log-compression-six-2nv1_5zd/frames/BGL.zstd.trunc"
+            ],
+            "seconds": 0.7540553221479058,
+            "returncode": 1,
+            "bytes": 719323136,
+            "sha256": "ec1cb5ade04cb7dcf360616bd00072d0c9f6852f1b96eae9871a8968b8959ccd",
+            "exact": false,
+            "stderr_tail": "/tmp/log-compression-six-2nv1_5zd/frames/BGL.zstd.trunc : Read error (39) : premature end \n"
+          }
+        }
+      },
+      "clp": {
+        "archive_bytes": 52501576,
+        "archive_files": 15,
+        "encode": {
+          "command": [
+            "/root/w/worker/worker-lead-six/tools/clp/usr/bin/clp",
+            "c",
+            "/tmp/log-compression-six-2nv1_5zd/frames/BGL.clp",
+            "--compression-level",
+            "19",
+            "--remove-path-prefix",
+            "/tmp/log-compression-six-2nv1_5zd/raw/BGL",
+            "/tmp/log-compression-six-2nv1_5zd/raw/BGL/BGL_full.log"
+          ],
+          "seconds": 113.54461715510115,
+          "returncode": 0,
+          "stderr_tail": ""
+        },
+        "decode": {
+          "command": [
+            "/root/w/worker/worker-lead-six/tools/clp/usr/bin/clp",
+            "x",
+            "/tmp/log-compression-six-2nv1_5zd/frames/BGL.clp",
+            "/tmp/log-compression-six-2nv1_5zd/frames/BGL.clp.extract"
+          ],
+          "seconds": 2.6364493020810187,
+          "returncode": 0,
+          "stderr_tail": ""
+        },
+        "roundtrip": true,
+        "restored_sha256": "1bd8cb4a8b163b5085d21d8e0d4cd844e01748cdcc0888c6380e0fb34ca85591",
+        "negative": {
+          "returncode": 255,
+          "sha256": null,
+          "rejected_or_wrong_hash": true
+        }
+      },
+      "source": {
+        "archive_url": "https://zenodo.org/records/8275861/files/BGL.zip?download=1",
+        "source_record": "https://zenodo.org/records/8275861",
+        "archive": "BGL.zip",
+        "archive_bytes": 86118141,
+        "archive_md5": "521ee643375bb6e9d0dd88636ff7ece1",
+        "archive_entry": "BGL/BGL_full.log",
+        "raw_bytes": 719447452,
+        "raw_sha256": "1bd8cb4a8b163b5085d21d8e0d4cd844e01748cdcc0888c6380e0fb34ca85591"
+      }
+    }
+  ],
+  "totals": {
+    "systems": 1,
+    "ncp2_exact": 1,
+    "ncp2_negative": 1,
+    "xz_exact": 1,
+    "zstd_exact": 1,
+    "clp_exact": 1
+  }
+}
